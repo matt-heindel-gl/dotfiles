@@ -1,0 +1,13 @@
+# herdr configuration
+# See `herdr --default-config` for the full annotated set of options.
+
+[keys]
+# Jump straight to a space/agent by number instead of picker -> arrows -> enter.
+# Plain prefix+1..9 default is switch_tab; swapped so spaces (used more) get the easy slot.
+switch_workspace = "prefix+1..9"
+switch_tab = "prefix+shift+1..9"
+focus_agent = "prefix+alt+1..9"
+
+# vim-style movement in navigate mode (pane nav already defaults to h/j/k/l).
+navigate_workspace_up = "k"
+navigate_workspace_down = "j"

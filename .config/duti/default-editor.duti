@@ -1,0 +1,54 @@
+# Default text/code editor for Finder: "Edit in Ghostty.app", a small
+# AppleScript droplet (source lives in its own Contents/Resources/Scripts)
+# that opens a new tab in the existing Ghostty window and runs nvim on the
+# file. Bundle id: com.mheindel.edit-in-ghostty.
+#
+# Umbrella UTIs first (catch most files, including extensionless/plain text)
+com.mheindel.edit-in-ghostty public.plain-text all
+com.mheindel.edit-in-ghostty public.source-code all
+com.mheindel.edit-in-ghostty net.daringfireball.markdown all
+com.mheindel.edit-in-ghostty public.json all
+com.mheindel.edit-in-ghostty public.xml all
+com.mheindel.edit-in-ghostty public.comma-separated-values-text all
+
+# Explicit extensions: needed because some apps (Cursor, etc.) register
+# themselves directly on the extension, which wins over a UTI-level default.
+com.mheindel.edit-in-ghostty .ts all
+com.mheindel.edit-in-ghostty .tsx all
+com.mheindel.edit-in-ghostty .js all
+com.mheindel.edit-in-ghostty .jsx all
+com.mheindel.edit-in-ghostty .mjs all
+com.mheindel.edit-in-ghostty .cjs all
+com.mheindel.edit-in-ghostty .py all
+com.mheindel.edit-in-ghostty .pyi all
+com.mheindel.edit-in-ghostty .go all
+com.mheindel.edit-in-ghostty .rb all
+com.mheindel.edit-in-ghostty .java all
+com.mheindel.edit-in-ghostty .c all
+com.mheindel.edit-in-ghostty .cpp all
+com.mheindel.edit-in-ghostty .h all
+com.mheindel.edit-in-ghostty .hpp all
+com.mheindel.edit-in-ghostty .rs all
+com.mheindel.edit-in-ghostty .swift all
+com.mheindel.edit-in-ghostty .css all
+com.mheindel.edit-in-ghostty .scss all
+com.mheindel.edit-in-ghostty .vue all
+com.mheindel.edit-in-ghostty .sh all
+com.mheindel.edit-in-ghostty .zsh all
+com.mheindel.edit-in-ghostty .bash all
+# .html intentionally left alone (opens in browser to preview, not edit)
+# .command intentionally left alone too (that's the "run as script" default,
+# set separately to Ghostty itself via ghostty-terminal.duti)
+
+# Explicit extensions as a safety net for types with no reliable UTI
+com.mheindel.edit-in-ghostty .yml all
+com.mheindel.edit-in-ghostty .yaml all
+com.mheindel.edit-in-ghostty .toml all
+com.mheindel.edit-in-ghostty .ini all
+com.mheindel.edit-in-ghostty .conf all
+com.mheindel.edit-in-ghostty .env all
+com.mheindel.edit-in-ghostty .log all
+com.mheindel.edit-in-ghostty .sql all
+com.mheindel.edit-in-ghostty .graphql all
+com.mheindel.edit-in-ghostty .proto all
+com.mheindel.edit-in-ghostty .tf all

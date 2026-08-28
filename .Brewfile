@@ -1,6 +1,8 @@
 tap "mongodb/brew"
 # Official Amazon AWS command-line interface
 brew "awscli"
+# Select default apps for documents and URL schemes on macOS
+brew "duti"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
 # GitHub command-line tool

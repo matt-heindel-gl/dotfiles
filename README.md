@@ -25,6 +25,19 @@ personal account), but it means the usual rule applies with no exceptions:
 - `.config/nvim`, `.hammerspoon` — submodules pointing at their own repos
   ([config-nvim](https://github.com/matt-heindel-gl/config-nvim),
   [config-hammerspoon](https://github.com/matt-heindel-gl/config-hammerspoon))
+- `.config/duti/*.duti` — Finder default-app associations, applied with
+  [duti](https://github.com/moretension/duti). `default-editor.duti` routes
+  text/code files to the "Edit in Ghostty" droplet (below);
+  `ghostty-terminal.duti` makes Ghostty the handler for `.command` files and
+  executable shell scripts.
+- `.config/edit-in-ghostty/` — source + build script for "Edit in
+  Ghostty.app", a small AppleScript droplet (not itself trackable here since
+  it installs to `/Applications`, outside `$HOME`) that opens a new Ghostty
+  tab and runs `nvim` on whatever file Finder hands it, reusing the existing
+  window instead of spawning a new one. Re-run `build.sh` any time the
+  `.applescript` source changes.
+- `.config/herdr/config.toml` — herdr keybindings (the rest of
+  `.config/herdr/` is session logs/sockets, not tracked)
 
 ## Bootstrapping a new machine
 
@@ -64,7 +77,11 @@ dotfiles checkout
 #    extensions, global npm packages)
 brew bundle install --file="$HOME/.Brewfile"
 
-# 6. Restart the shell to pick up .zshrc (installs oh-my-zsh/nvm on first
+# 6. Build the Finder default-editor droplet and apply file-association
+#    defaults (see .config/edit-in-ghostty/ and .config/duti/ above)
+"$HOME/.config/edit-in-ghostty/build.sh"
+
+# 7. Restart the shell to pick up .zshrc (installs oh-my-zsh/nvm on first
 #    run if not already present — see .zshrc for what it expects)
 exec zsh
 ```
@@ -76,6 +93,9 @@ Then, manually (can't be scripted):
 - Open **nvim** and let the plugin manager sync on first launch.
 - `gh auth login` for GitHub CLI, and set up SSH keys separately if you want
   SSH remotes instead of HTTPS (keys are intentionally not in this repo).
+- The first time you open a file via Finder (or `open`), macOS will prompt
+  to let "Edit in Ghostty" control Ghostty — approve it, or the droplet
+  fails silently instead of opening the file.
 
 ## Day-to-day usage
 

@@ -1,0 +1,5 @@
+# Make Ghostty the default handler for double-clicked shell scripts /
+# .command launchers (the actual "default terminal" lever on macOS —
+# there's no single default-terminal toggle like there is for browsers).
+com.mitchellh.ghostty public.unix-executable all
+com.mitchellh.ghostty .command all
