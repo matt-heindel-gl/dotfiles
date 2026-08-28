@@ -89,11 +89,18 @@ Then, manually (can't be scripted):
 
 ## Day-to-day usage
 
-The `dotfiles` alias (defined in `.zshrc`) is just `git` scoped to this repo:
+The `dotfiles` function (defined in `.zshrc`) is `git` scoped to this repo,
+plus a couple of helpers:
 
 ```bash
 dotfiles status
 dotfiles add .some_new_dotfile
 dotfiles commit -m "..."
 dotfiles push
+
+dotfiles edit                 # cd ~ && nvim . — jump straight into editing dotfiles
 ```
+
+For `git submodule` commands specifically, `cd ~` first and drop `--work-tree`
+(see the bootstrap note above for why) — the `dotfiles` function isn't
+special-cased for this since it's rarely needed day-to-day.

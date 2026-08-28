@@ -120,7 +120,16 @@ export VISUAL='nvim'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 PATH="$PATH:$HOME/bin"
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME'
+dotfiles() {
+  case "$1" in
+    edit)
+      cd "$HOME" && nvim .
+      ;;
+    *)
+      /usr/bin/git --git-dir="$HOME/dotfiles.git" --work-tree="$HOME" "$@"
+      ;;
+  esac
+}
 
 export PATH="/opt/homebrew/bin:$PATH"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
