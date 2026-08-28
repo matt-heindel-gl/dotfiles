@@ -1,0 +1,6 @@
+[submodule ".config/nvim"]
+	path = .config/nvim
+	url = https://github.com/matt-heindel-gl/config-nvim.git
+[submodule ".hammerspoon"]
+	path = .hammerspoon
+	url = https://github.com/matt-heindel-gl/config-hammerspoon.git
