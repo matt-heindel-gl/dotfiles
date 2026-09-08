@@ -98,7 +98,7 @@
   },
   "effortLevel": "xhigh",
   "advisorModel": "opus",
-  "tui": "default",
+  "tui": "fullscreen",
   "autoDreamEnabled": true,
   "editorMode": "vim",
   "preferredNotifChannel": "iterm2_with_bell",
