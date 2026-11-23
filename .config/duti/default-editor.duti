@@ -6,10 +6,9 @@
 # Umbrella UTIs first (catch most files, including extensionless/plain text)
 com.mheindel.edit-in-ghostty public.plain-text all
 com.mheindel.edit-in-ghostty public.source-code all
-com.mheindel.edit-in-ghostty net.daringfireball.markdown all
 com.mheindel.edit-in-ghostty public.json all
 com.mheindel.edit-in-ghostty public.xml all
-com.mheindel.edit-in-ghostty public.comma-separated-values-text all
+# Markdown and CSV intentionally omitted: see document-apps.duti
 
 # Explicit extensions: needed because some apps (Cursor, etc.) register
 # themselves directly on the extension, which wins over a UTI-level default.

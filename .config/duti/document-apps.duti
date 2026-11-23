@@ -1,0 +1,12 @@
+# File types that open in a GUI app instead of the Ghostty/nvim droplet.
+# Both UTI and extension lines: Word claims .md directly, which beats a
+# UTI-level default.
+
+# Markdown -> VS Code
+com.microsoft.VSCode net.daringfireball.markdown all
+com.microsoft.VSCode .md all
+com.microsoft.VSCode .markdown all
+
+# CSV -> Excel
+com.microsoft.Excel public.comma-separated-values-text all
+com.microsoft.Excel .csv all

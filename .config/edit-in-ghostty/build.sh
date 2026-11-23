@@ -50,6 +50,7 @@ codesign --force --deep -s - "$APP"
 
 duti "$SCRIPT_DIR/../duti/default-editor.duti"
 duti "$SCRIPT_DIR/../duti/ghostty-terminal.duti"
+duti "$SCRIPT_DIR/../duti/document-apps.duti"
 
 echo "Built and registered: $APP"
 echo "First launch will prompt for permission to control Ghostty — approve it."
